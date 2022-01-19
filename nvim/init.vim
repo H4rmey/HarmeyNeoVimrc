@@ -15,23 +15,24 @@ set scrolloff=8
 set colorcolumn=80
 set signcolumn=yes
 
-let mapleader = " "
+let mapleader = " " 
 
-call plug#begin("~/.vim/plugged")
+call plug#begin()
 
-Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'morhetz/gruvbox'
+
+call plug#end()
+
+" telescope remaps:
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 call plug#end()
 
 colorscheme gruvbox
 highlight Normal guibg=none
-
-if exists('g:vscode')
-		" VSCode extension
-else
-		" ordinary neovim
-endif
