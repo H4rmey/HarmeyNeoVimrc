@@ -8,11 +8,8 @@ set hidden
 set noerrorbells
 set smartindent
 set nowrap
-set noswapfile
-set nobackup
 set undofile
 set scrolloff=8
-set colorcolumn=80
 set signcolumn=yes
 
 let mapleader = " " 
